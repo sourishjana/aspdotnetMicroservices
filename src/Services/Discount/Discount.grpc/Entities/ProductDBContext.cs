@@ -12,14 +12,6 @@ public class ProductDBContext : DbContext
 
     public virtual DbSet<Coupon> Coupons { get; set; } = null!;
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-DJ3D3T0\\SQLSERVER;Database=ProductDB;Integrated Security=True");
-        }
-    }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Coupon>(entity =>
