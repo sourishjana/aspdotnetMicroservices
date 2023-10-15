@@ -49,7 +49,7 @@ public class ProductRepository : IProductRepository
 
     public async Task CreateProduct(Product product)
     {
-        _context.Add(product);
+        _context.Products.Add(product);
         await _context.SaveChangesAsync();
     }
 
